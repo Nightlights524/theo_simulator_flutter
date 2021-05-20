@@ -45,10 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Container(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          width: 340,
           color: Colors.yellow,
           child: SingleChildScrollView(
             child: Column(
@@ -56,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image(
+                  fit: BoxFit.cover,
                   image: _image,
                   width: 300,
                   height: 300,
@@ -109,6 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
           //   tooltip: 'Increment',
           //   child: Icon(Icons.add),
           // ), // This trailing comma makes auto-formatting nicer for build methods.
-        ));
+        ),
+      ),
+    );
   }
 }
