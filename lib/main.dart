@@ -61,95 +61,100 @@ class _MyHomePageState extends State<MyHomePage> {
         // padding: EdgeInsets.all(20),
         // width: 340,
         color: Colors.purple.shade50,
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Image.asset(
-                  _imagePath,
-                  fit: BoxFit.cover,
-                  width: 300,
-                  height: 300,
-                  gaplessPlayback: true,
-                ),
-                Container(
-                  width: 300,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Make Theo:",
-                              style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Happy", "TheoHappy.jpg"),
-                                Spacer(),
-                                _buildButton("Hungry", "TheoHungry.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Zone Out", "TheoZoneOut.jpg"),
-                                Spacer(),
-                                _buildButton("Smirk", "TheoSmirk.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Old-Timey", "TheoOldTimey.jpg"),
-                                Spacer(),
-                                _buildButton("Playful", "TheoPlayful.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Bright-Eyed & Bushy-Tailed",
-                                    "TheoBrightEyedBushyTailed.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Amiable", "TheoBase.jpg"),
-                                Spacer(),
-                                _buildButton("Cry", "TheoCry.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Amiable", "TheoBase.jpg"),
-                                Spacer(),
-                                _buildButton("Cry", "TheoCry.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Amiable", "TheoBase.jpg"),
-                                Spacer(),
-                                _buildButton("Cry", "TheoCry.jpg"),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                _buildButton("Amiable", "TheoBase.jpg"),
-                                Spacer(),
-                                _buildButton("Cry", "TheoCry.jpg"),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+        // child: Center(
+        // child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    _imagePath,
+                    fit: BoxFit.cover,
+                    width: 300,
+                    height: 300,
+                    gaplessPlayback: true,
                   ),
-                ),
-              ],
+                  Container(
+                    width: 300,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Make Theo:",
+                                style: TextStyle(
+                                    fontSize: 24, fontWeight: FontWeight.bold),
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Happy", "TheoHappy.jpg"),
+                                  Spacer(),
+                                  _buildButton("Hungry", "TheoHungry.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Zone Out", "TheoZoneOut.jpg"),
+                                  Spacer(),
+                                  _buildButton("Smirk", "TheoSmirk.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Old-Timey", "TheoOldTimey.jpg"),
+                                  Spacer(),
+                                  _buildButton("Playful", "TheoPlayful.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Bright-Eyed & Bushy-Tailed",
+                                      "TheoBrightEyedBushyTailed.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Amiable", "TheoBase.jpg"),
+                                  Spacer(),
+                                  _buildButton("Cry", "TheoCry.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Amiable", "TheoBase.jpg"),
+                                  Spacer(),
+                                  _buildButton("Cry", "TheoCry.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Amiable", "TheoBase.jpg"),
+                                  Spacer(),
+                                  _buildButton("Cry", "TheoCry.jpg"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildButton("Amiable", "TheoBase.jpg"),
+                                  Spacer(),
+                                  _buildButton("Cry", "TheoCry.jpg"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
