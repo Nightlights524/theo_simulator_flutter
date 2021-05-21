@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(TheoSimulator());
 
-class MyApp extends StatelessWidget {
+class TheoSimulator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,18 +25,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // String _imagePath = "assets/images/TheoCry.jpg";
-  AssetImage _image = AssetImage("assets/images/TheoBase.jpg");
+  String _imagePath = "assets/images/TheoBase.jpg";
 
   void _setImage(String imageName) {
     setState(() {
-      _image = AssetImage("assets/images/$imageName");
+      _imagePath = "assets/images/$imageName";
     });
   }
 
   Widget _buildButton(String buttonText, String imageName) {
+    // return Expanded(
+    //   child: ElevatedButton(
+    //     onPressed: () => _setImage(imageName),
+    //     child: Text(buttonText),
+    //   ),
+    // );
+
     return ElevatedButton(
-      // style: style,
       onPressed: () => _setImage(imageName),
       child: Text(buttonText),
     );
@@ -51,68 +56,87 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Container(
           padding: EdgeInsets.all(20),
-          width: 340,
-          color: Colors.yellow,
+          // width: 340,
+          color: Colors.purple.shade50,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image(
+                Image.asset(
+                  _imagePath,
                   fit: BoxFit.cover,
-                  image: _image,
                   width: 300,
                   height: 300,
+                  gaplessPlayback: true,
                 ),
-                IntrinsicHeight(
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Make Theo:",
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _buildButton("Happy", "TheoHappy.jpg"),
-                            _buildButton("Zone Out", "TheoZoneOut.jpg"),
-                            _buildButton("Old-Timey", "TheoOldTimey.jpg"),
-                            _buildButton("Amiable", "TheoBase.jpg"),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            _buildButton("Hungry", "TheoHungry.jpg"),
-                            _buildButton("Smirk", "TheoSmirk.jpg"),
-                            _buildButton("Playful", "TheoPlayful.jpg"),
-                            _buildButton("Cry", "TheoCry.jpg"),
-                          ],
-                        ),
-                      ],
-                    ),
+                // IntrinsicHeight(
+                // child: Container(
+                Container(
+                  constraints: BoxConstraints(
+                      // maxWidth: 300,
+                      // minWidth: 300,
+                      // minHeight: 400,
+                      // maxHeight: 200,
+                      ),
+                  // width: 300,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Make Theo:",
+                            style: TextStyle(
+                                fontSize: 21, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              _buildButton("Happy", "TheoHappy.jpg"),
+                              _buildButton("Hungry", "TheoHungry.jpg"),
+                              // Expanded(child: _buildButton("Happy", "TheoHappy.jpg")),
+                              // Expanded(child: _buildButton("Hungry", "TheoHungry.jpg")),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              _buildButton("Zone Out", "TheoZoneOut.jpg"),
+                              _buildButton("Smirk", "TheoSmirk.jpg"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              _buildButton("Old-Timey", "TheoOldTimey.jpg"),
+                              _buildButton("Playful", "TheoPlayful.jpg"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              _buildButton("Bright-Eyed & Bushy-Tailed",
+                                  "TheoBrightEyedBushyTailed.jpg"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              _buildButton("Amiable", "TheoBase.jpg"),
+                              _buildButton("Cry", "TheoCry.jpg"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-                // Text(
-                //   '$_counter',
-                //   style: Theme.of(context).textTheme.headline4,
                 // ),
-                _buildButton("Bright-Eyed & Bushy-Tailed",
-                    "TheoBrightEyedBushyTailed.jpg"),
               ],
             ),
           ),
-          // floatingActionButton: FloatingActionButton(
-          //   onPressed: () => setImage("TheoOldTimey"),
-          //   tooltip: 'Increment',
-          //   child: Icon(Icons.add),
-          // ), // This trailing comma makes auto-formatting nicer for build methods.
         ),
       ),
     );
