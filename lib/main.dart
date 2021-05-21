@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => _setImage(imageName),
         child: Text(
           buttonText,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 18),
         ),
       ),
     );
@@ -57,14 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.purple.shade50,
-        // child: Center(
-        // child: SingleChildScrollView(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Center(
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints viewportConstraints) {
+          return SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.purple.shade50,
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
+                minWidth: viewportConstraints.maxWidth,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,8 +135,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
