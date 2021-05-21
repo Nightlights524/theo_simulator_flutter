@@ -58,8 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        // padding: EdgeInsets.all(20),
-        // width: 340,
         color: Colors.purple.shade50,
         // child: Center(
         // child: SingleChildScrollView(
@@ -117,27 +115,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   _buildButton("Bright-Eyed & Bushy-Tailed",
                                       "TheoBrightEyedBushyTailed.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Amiable", "TheoBase.jpg"),
-                                  Spacer(),
-                                  _buildButton("Cry", "TheoCry.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Amiable", "TheoBase.jpg"),
-                                  Spacer(),
-                                  _buildButton("Cry", "TheoCry.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Amiable", "TheoBase.jpg"),
-                                  Spacer(),
-                                  _buildButton("Cry", "TheoCry.jpg"),
                                 ],
                               ),
                               Row(
