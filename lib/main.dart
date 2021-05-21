@@ -38,17 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
       flex: 10,
       child: ElevatedButton(
         onPressed: () => _setImage(imageName),
+        // style: ElevatedButton.styleFrom(
+        //   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        // ),
         child: Text(
           buttonText,
           style: TextStyle(fontSize: 18),
         ),
       ),
     );
-
-    // return ElevatedButton(
-    //   onPressed: () => _setImage(imageName),
-    //   child: Text(buttonText),
-    // );
   }
 
   @override
@@ -78,56 +76,51 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 300,
                     gaplessPlayback: true,
                   ),
+                  Text(
+                    "Make Theo:",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
                   Container(
+                    color: Colors.blue,
                     width: 300,
-                    child: Row(
+                    // height: 300,
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Make Theo:",
-                                style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.bold),
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Happy", "TheoHappy.jpg"),
-                                  Spacer(),
-                                  _buildButton("Hungry", "TheoHungry.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Zone Out", "TheoZoneOut.jpg"),
-                                  Spacer(),
-                                  _buildButton("Smirk", "TheoSmirk.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Old-Timey", "TheoOldTimey.jpg"),
-                                  Spacer(),
-                                  _buildButton("Playful", "TheoPlayful.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Bright-Eyed & Bushy-Tailed",
-                                      "TheoBrightEyedBushyTailed.jpg"),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  _buildButton("Amiable", "TheoBase.jpg"),
-                                  Spacer(),
-                                  _buildButton("Cry", "TheoCry.jpg"),
-                                ],
-                              ),
-                            ],
-                          ),
+                        Row(
+                          children: [
+                            _buildButton("Happy", "TheoHappy.jpg"),
+                            Spacer(),
+                            _buildButton("Hungry", "TheoHungry.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Zone Out", "TheoZoneOut.jpg"),
+                            Spacer(),
+                            _buildButton("Smirk", "TheoSmirk.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Old-Timey", "TheoOldTimey.jpg"),
+                            Spacer(),
+                            _buildButton("Playful", "TheoPlayful.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Bright-Eyed & Bushy-Tailed",
+                                "TheoBrightEyedBushyTailed.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Amiable", "TheoBase.jpg"),
+                            Spacer(),
+                            _buildButton("Cry", "TheoCry.jpg"),
+                          ],
                         ),
                       ],
                     ),
