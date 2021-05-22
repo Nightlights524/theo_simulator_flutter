@@ -5,12 +5,13 @@ void main() => runApp(TheoSimulator());
 class TheoSimulator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    const String appTitle = "Theo Simulator";
     return MaterialApp(
-      title: 'Theo Simulator',
+      title: appTitle,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: MyHomePage(title: 'Theo Simulator'),
+      home: MyHomePage(title: appTitle),
     );
   }
 }
