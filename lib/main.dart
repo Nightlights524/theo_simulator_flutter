@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Image? theoBrightEyedBushyTailed;
   Image? theoAmiable;
   Image? theoCry;
+  String _currentImage = "assets/images/TheoAmiable.jpg";
 
   @override
   void initState() {
@@ -67,12 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
     precacheImage(theoCry!.image, context);
   }
 
-  //-------------
-  String _imagePath = "assets/images/TheoAmiable.jpg";
-
   void _setImage(String imageName) {
     setState(() {
-      _imagePath = "assets/images/$imageName";
+      _currentImage = "assets/images/$imageName";
     });
   }
 
@@ -110,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    _imagePath,
+                    _currentImage,
                     fit: BoxFit.cover,
                     width: mediaQueryData.size.width - 60,
                     height: mediaQueryData.size.width - 60,
