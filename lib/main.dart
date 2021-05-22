@@ -112,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     fit: BoxFit.cover,
                     width: mediaQueryData.size.width - 60,
                     height: mediaQueryData.size.width - 60,
+                    gaplessPlayback: true,
                   ),
                   Text(
                     "Make Theo:",
