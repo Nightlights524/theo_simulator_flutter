@@ -26,35 +26,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _currentImage = "assets/images/TheoAmiable.jpg";
+  var _currentImage = "assets/images/TheoAmiable.jpg";
 
-  // Precache images for instant loading
-  final theoHappy = Image.asset("assets/images/TheoHappy.jpg");
-  final theoHungry = Image.asset("assets/images/TheoHungry.jpg");
-  final theoZoneOut = Image.asset("assets/images/TheoZoneOut.jpg");
-  final theoSmirk = Image.asset("assets/images/TheoSmirk.jpg");
-  final theoOldTimey = Image.asset("assets/images/TheoOldTimey.jpg");
-  final theoPlayful = Image.asset("assets/images/TheoPlayful.jpg");
-  final theoBrightEyedBushyTailed =
-      Image.asset("assets/images/TheoBrightEyedBushyTailed.jpg");
-  final theoAmiable = Image.asset("assets/images/TheoAmiable.jpg");
-  final theoCry = Image.asset("assets/images/TheoCry.jpg");
+  // Load images to precache
+  final images = <Image>[
+    Image.asset("assets/images/TheoHappy.jpg"),
+    Image.asset("assets/images/TheoHungry.jpg"),
+    Image.asset("assets/images/TheoZoneOut.jpg"),
+    Image.asset("assets/images/TheoSmirk.jpg"),
+    Image.asset("assets/images/TheoOldTimey.jpg"),
+    Image.asset("assets/images/TheoPlayful.jpg"),
+    Image.asset("assets/images/TheoBrightEyedBushyTailed.jpg"),
+    Image.asset("assets/images/TheoAmiable.jpg"),
+    Image.asset("assets/images/TheoCry.jpg"),
+  ];
 
+  // Actually call the precache function inside didChangeDependencies
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    precacheImage(theoHappy.image, context);
-    precacheImage(theoHungry.image, context);
-    precacheImage(theoZoneOut.image, context);
-    precacheImage(theoSmirk.image, context);
-    precacheImage(theoOldTimey.image, context);
-    precacheImage(theoPlayful.image, context);
-    precacheImage(theoBrightEyedBushyTailed.image, context);
-    precacheImage(theoAmiable.image, context);
-    precacheImage(theoCry.image, context);
+    for (var image in images) {
+      precacheImage(image.image, context);
+    }
   }
 
   void _setImage(String imageName) {
+    if (_currentImage == "assets/images/$imageName") {
+      return;
+    }
     setState(() {
       _currentImage = "assets/images/$imageName";
     });
