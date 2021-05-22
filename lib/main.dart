@@ -26,7 +26,49 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _imagePath = "assets/images/TheoBase.jpg";
+  Image? theoHappy;
+  Image? theoHungry;
+  Image? theoZoneOut;
+  Image? theoSmirk;
+  Image? theoOldTimey;
+  Image? theoPlayful;
+  Image? theoBrightEyedBushyTailed;
+  Image? theoAmiable;
+  Image? theoCry;
+
+  @override
+  void initState() {
+    super.initState();
+
+    theoHappy = Image.asset("assets/images/TheoHappy.jpg");
+    theoHungry = Image.asset("assets/images/TheoHungry.jpg");
+    theoZoneOut = Image.asset("assets/images/TheoZoneOut.jpg");
+    theoSmirk = Image.asset("assets/images/TheoSmirk.jpg");
+    theoOldTimey = Image.asset("assets/images/TheoOldTimey.jpg");
+    theoPlayful = Image.asset("assets/images/TheoPlayful.jpg");
+    theoBrightEyedBushyTailed =
+        Image.asset("assets/images/TheoBrightEyedBushyTailed.jpg");
+    theoAmiable = Image.asset("assets/images/TheoAmiable.jpg");
+    theoCry = Image.asset("assets/images/TheoCry.jpg");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    precacheImage(theoHappy!.image, context);
+    precacheImage(theoHungry!.image, context);
+    precacheImage(theoZoneOut!.image, context);
+    precacheImage(theoSmirk!.image, context);
+    precacheImage(theoOldTimey!.image, context);
+    precacheImage(theoPlayful!.image, context);
+    precacheImage(theoBrightEyedBushyTailed!.image, context);
+    precacheImage(theoAmiable!.image, context);
+    precacheImage(theoCry!.image, context);
+  }
+
+  //-------------
+  String _imagePath = "assets/images/TheoAmiable.jpg";
 
   void _setImage(String imageName) {
     setState(() {
@@ -72,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     fit: BoxFit.cover,
                     width: mediaQueryData.size.width - 60,
                     height: mediaQueryData.size.width - 60,
-                    gaplessPlayback: true,
+                    // gaplessPlayback: true,
                   ),
                   Text(
                     "Make Theo:",
@@ -107,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Row(
                     children: [
-                      _buildButton("Amiable", "TheoBase.jpg"),
+                      _buildButton("Amiable", "TheoAmiable.jpg"),
                       Spacer(),
                       _buildButton("Cry", "TheoCry.jpg"),
                     ],
