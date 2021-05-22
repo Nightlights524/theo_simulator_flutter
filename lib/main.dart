@@ -29,43 +29,29 @@ class _MyHomePageState extends State<MyHomePage> {
   String _currentImage = "assets/images/TheoAmiable.jpg";
 
   // Precache images for instant loading
-  Image? theoHappy;
-  Image? theoHungry;
-  Image? theoZoneOut;
-  Image? theoSmirk;
-  Image? theoOldTimey;
-  Image? theoPlayful;
-  Image? theoBrightEyedBushyTailed;
-  Image? theoAmiable;
-  Image? theoCry;
-
-  @override
-  void initState() {
-    super.initState();
-    theoHappy = Image.asset("assets/images/TheoHappy.jpg");
-    theoHungry = Image.asset("assets/images/TheoHungry.jpg");
-    theoZoneOut = Image.asset("assets/images/TheoZoneOut.jpg");
-    theoSmirk = Image.asset("assets/images/TheoSmirk.jpg");
-    theoOldTimey = Image.asset("assets/images/TheoOldTimey.jpg");
-    theoPlayful = Image.asset("assets/images/TheoPlayful.jpg");
-    theoBrightEyedBushyTailed =
-        Image.asset("assets/images/TheoBrightEyedBushyTailed.jpg");
-    theoAmiable = Image.asset("assets/images/TheoAmiable.jpg");
-    theoCry = Image.asset("assets/images/TheoCry.jpg");
-  }
+  final theoHappy = Image.asset("assets/images/TheoHappy.jpg");
+  final theoHungry = Image.asset("assets/images/TheoHungry.jpg");
+  final theoZoneOut = Image.asset("assets/images/TheoZoneOut.jpg");
+  final theoSmirk = Image.asset("assets/images/TheoSmirk.jpg");
+  final theoOldTimey = Image.asset("assets/images/TheoOldTimey.jpg");
+  final theoPlayful = Image.asset("assets/images/TheoPlayful.jpg");
+  final theoBrightEyedBushyTailed =
+      Image.asset("assets/images/TheoBrightEyedBushyTailed.jpg");
+  final theoAmiable = Image.asset("assets/images/TheoAmiable.jpg");
+  final theoCry = Image.asset("assets/images/TheoCry.jpg");
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    precacheImage(theoHappy!.image, context);
-    precacheImage(theoHungry!.image, context);
-    precacheImage(theoZoneOut!.image, context);
-    precacheImage(theoSmirk!.image, context);
-    precacheImage(theoOldTimey!.image, context);
-    precacheImage(theoPlayful!.image, context);
-    precacheImage(theoBrightEyedBushyTailed!.image, context);
-    precacheImage(theoAmiable!.image, context);
-    precacheImage(theoCry!.image, context);
+    precacheImage(theoHappy.image, context);
+    precacheImage(theoHungry.image, context);
+    precacheImage(theoZoneOut.image, context);
+    precacheImage(theoSmirk.image, context);
+    precacheImage(theoOldTimey.image, context);
+    precacheImage(theoPlayful.image, context);
+    precacheImage(theoBrightEyedBushyTailed.image, context);
+    precacheImage(theoAmiable.image, context);
+    precacheImage(theoCry.image, context);
   }
 
   void _setImage(String imageName) {
@@ -112,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     fit: BoxFit.cover,
                     width: mediaQueryData.size.width - 60,
                     height: mediaQueryData.size.width - 60,
-                    gaplessPlayback: true,
+                    // gaplessPlayback: true,
                   ),
                   Text(
                     "Make Theo:",
