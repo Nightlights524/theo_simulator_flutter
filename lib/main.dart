@@ -26,6 +26,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String _currentImage = "assets/images/TheoAmiable.jpg";
+
+  // Precache images for instant loading
   Image? theoHappy;
   Image? theoHungry;
   Image? theoZoneOut;
@@ -35,12 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Image? theoBrightEyedBushyTailed;
   Image? theoAmiable;
   Image? theoCry;
-  String _currentImage = "assets/images/TheoAmiable.jpg";
 
   @override
   void initState() {
     super.initState();
-
     theoHappy = Image.asset("assets/images/TheoHappy.jpg");
     theoHungry = Image.asset("assets/images/TheoHungry.jpg");
     theoZoneOut = Image.asset("assets/images/TheoZoneOut.jpg");
@@ -56,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-
     precacheImage(theoHappy!.image, context);
     precacheImage(theoHungry!.image, context);
     precacheImage(theoZoneOut!.image, context);
@@ -112,7 +112,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     fit: BoxFit.cover,
                     width: mediaQueryData.size.width - 60,
                     height: mediaQueryData.size.width - 60,
-                    // gaplessPlayback: true,
                   ),
                   Text(
                     "Make Theo:",
