@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
       child: ElevatedButton(
         onPressed: () => _setImage(imageName),
         style: ElevatedButton.styleFrom(
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        ),
+            // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
         child: Text(
           buttonText,
           style: TextStyle(fontSize: 18),
@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQueryData = MediaQuery.of(context);
     return Scaffold(
       // backgroundColor: Colors.purple.shade50,
       appBar: AppBar(
@@ -72,17 +73,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   Image.asset(
                     _imagePath,
                     fit: BoxFit.cover,
-                    width: 300,
-                    height: 300,
+                    width: mediaQueryData.size.width - 40,
+                    height: mediaQueryData.size.width - 40,
+                    // width: 300,
+                    // height: 300,
                     gaplessPlayback: true,
                   ),
                   Text(
                     "Make Theo:",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   Container(
-                    color: Colors.blue,
-                    width: 300,
+                    // color: Colors.blue,
+                    width: mediaQueryData.size.width - 40,
+                    // width: 300,
                     // height: 300,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
