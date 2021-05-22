@@ -52,87 +52,84 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.purple.shade50,
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.purple.shade50,
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints viewportConstraints) {
-            return SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.all(20),
-                constraints: BoxConstraints(
-                  minHeight: viewportConstraints.maxHeight,
-                  minWidth: viewportConstraints.maxWidth,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset(
-                      _imagePath,
-                      fit: BoxFit.cover,
-                      width: 300,
-                      height: 300,
-                      gaplessPlayback: true,
-                    ),
-                    Text(
-                      "Make Theo:",
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
-                    Container(
-                      color: Colors.blue,
-                      width: 300,
-                      // height: 300,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            children: [
-                              _buildButton("Happy", "TheoHappy.jpg"),
-                              Spacer(),
-                              _buildButton("Hungry", "TheoHungry.jpg"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              _buildButton("Zone Out", "TheoZoneOut.jpg"),
-                              Spacer(),
-                              _buildButton("Smirk", "TheoSmirk.jpg"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              _buildButton("Old-Timey", "TheoOldTimey.jpg"),
-                              Spacer(),
-                              _buildButton("Playful", "TheoPlayful.jpg"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              _buildButton("Bright-Eyed & Bushy-Tailed",
-                                  "TheoBrightEyedBushyTailed.jpg"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              _buildButton("Amiable", "TheoBase.jpg"),
-                              Spacer(),
-                              _buildButton("Cry", "TheoCry.jpg"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints viewportConstraints) {
+          return SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
+                minWidth: viewportConstraints.maxWidth,
               ),
-            );
-          },
-        ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    _imagePath,
+                    fit: BoxFit.cover,
+                    width: 300,
+                    height: 300,
+                    gaplessPlayback: true,
+                  ),
+                  Text(
+                    "Make Theo:",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    width: 300,
+                    // height: 300,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            _buildButton("Happy", "TheoHappy.jpg"),
+                            Spacer(),
+                            _buildButton("Hungry", "TheoHungry.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Zone Out", "TheoZoneOut.jpg"),
+                            Spacer(),
+                            _buildButton("Smirk", "TheoSmirk.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Old-Timey", "TheoOldTimey.jpg"),
+                            Spacer(),
+                            _buildButton("Playful", "TheoPlayful.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Bright-Eyed & Bushy-Tailed",
+                                "TheoBrightEyedBushyTailed.jpg"),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _buildButton("Amiable", "TheoBase.jpg"),
+                            Spacer(),
+                            _buildButton("Cry", "TheoCry.jpg"),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
