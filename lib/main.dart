@@ -81,7 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.purple.shade50,
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
@@ -113,7 +112,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Container(
                         width: isPortrait ? photoDimension : photoSafeWidth / 2,
-                        // height: isPortrait ? photoDimension : photoSafeWidth / 2,
                         child: Column(
                           children: [
                             Container(
